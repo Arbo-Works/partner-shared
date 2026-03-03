@@ -1,0 +1,18 @@
+load("@aspect_bazel_lib//lib:copy_to_directory.bzl", "copy_to_directory")
+load("@aspect_bazel_lib//lib:write_source_files.bzl", "write_source_files")
+
+copy_to_directory(
+    name = "gen_dir",
+    srcs = ["//studio/service:studio_service_ts_grpc_proto"],
+    root_paths = ["studio/service"],
+)
+
+write_source_files(
+    name = "gen_update",
+    files = {
+        "gen": ":gen_dir",
+    },
+    # The `gen` directory is not watched, so tests are tagged `external`
+    # to ensure they are always run, regardless of cache.
+    tags = ["external"],
+)

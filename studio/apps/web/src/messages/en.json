@@ -1,0 +1,82 @@
+{
+  "components": {
+    "AccountDrawer": {
+      "ModeSwitch": {
+        "dark": "Dark",
+        "light": "Light",
+        "system": "System"
+      },
+      "profile": "Profile",
+      "signOut": "Sign Out",
+      "subscriptions": "Billing",
+      "UsageStats": {
+        "limitExceeded": "Limit exceeded",
+        "title": "Your Sidekick Usage",
+        "usageTooltip": "Usage is reset at the end of each billing cycle. Upgrade to a higher plan for higher usage quotas.",
+        "viewPlans": "View plans ▸"
+      }
+    },
+    "Chat": {
+      "SystemHintMenu": {
+        "aiPersonalitySettings": "Personality",
+        "fileSearch": "File Search"
+      },
+      "Transcriptions": {
+        "inactivityDisconnect": "Disconnecting due to inactivity"
+      }
+    },
+    "Navigation": {
+      "Sidebar": {
+        "agent": "Agent",
+        "dataSources": "Data Sources",
+        "settings": "Settings"
+      },
+      "History": {
+        "title": "History"
+      }
+    }
+  },
+  "hooks": {
+    "useLivekitConnection": {
+      "failedToConnect": "Failed to connect to voice chat"
+    }
+  },
+  "pages": {
+    "home": {
+      "components": {
+        "Chat": {
+          "Controls": {
+            "micPermissionDenied": "Microphone access is not available. Please check your permissions and try again."
+          },
+          "VoiceChat": {
+            "connecting": "Connecting",
+            "connectionFailed": "Connection failed! please try again"
+          }
+        }
+      },
+      "HomeContent": {
+        "inputPlaceholder": "Ask and research. @ any portfolio or tool",
+        "knowledgeBase": "Knowledge Base",
+        "portfoliosYouFollow": "Portfolios You Follow",
+        "portfoliosYouFollowZeroState": "You don't follow any portfolios yet. Follow a portfolio to see it here.",
+        "researchPortfoliosTitle": "Research Portfolios",
+        "researchPortfoliosZeroStateDescription": "Use @research with the Sidekick Agent to create a research portfolio.\n",
+        "tasks": "Tasks",
+        "tools": "Tools",
+        "toolsDescription": "Explore tools that give your agent more insightful, technical, or fun capabilities.",
+        "toolsTitle": "your toolbox",
+        "yourPortfolios": "Your Portfolios",
+        "yourPortfoliosDescription": "Add your portfolios and your agent will monitor them for you, and use them to surface relevant information.",
+        "yourPortfoliosTitle": "your portfolios"
+      },
+      "metadataTitle": "Home"
+    },
+    "login": {
+      "studio": "studio",
+      "heading": "Try arta’s agents in a controlled environment",
+      "username": "Username",
+      "continue": "Continue",
+      "metadataTitle": "Login"
+    }
+  }
+}

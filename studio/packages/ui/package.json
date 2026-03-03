@@ -1,0 +1,25 @@
+{
+  "name": "@arta/ui",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./*": "./src/*.tsx"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@arta/eslint-config": "workspace:*",
+    "@arta/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.2.2",
+    "eslint": "^9.39.1",
+    "turbo": "^2.8.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "react": "^19.2.0"
+  }
+}

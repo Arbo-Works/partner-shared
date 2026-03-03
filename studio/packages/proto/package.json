@@ -1,0 +1,14 @@
+{
+  "name": "@arta/studio-proto",
+  "version": "0.1.0",
+  "description": "Generated Protocol Buffer sources for Studio",
+  "type": "module",
+  "exports": {
+    "./gen/*": "./gen/*.js"
+  },
+  "private": true,
+  "devDependencies": {
+    "@arta/typescript-config": "workspace:*",
+    "@bufbuild/protobuf": "^2.11.0"
+  }
+}

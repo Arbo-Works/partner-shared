@@ -1,0 +1,12 @@
+{
+  "name": "@arta/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "next": "16.1.0"
+  }
+}

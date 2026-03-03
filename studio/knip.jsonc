@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "workspaces": {
+    ".": {
+      "entry": [],
+      "project": []
+    },
+    "apps/web": {
+      "ignoreDependencies": [
+        "@svgr/webpack" // Used in `next.config.ts`
+      ]
+    },
+    "packages/proto": {
+      "entry": ["gen/**/*.{js,ts}"]
+    }
+  }
+}
