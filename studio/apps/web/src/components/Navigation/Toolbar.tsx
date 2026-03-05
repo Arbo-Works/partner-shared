@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Button,
   Icon,
   IconButton,
   Stack,
@@ -9,12 +10,21 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { IconMenuDeep } from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import theme from "@/theme";
 
 export function Toolbar(props: { toggleSidebar: () => void }) {
+  const t = useTranslations("components.Navigation.Toolbar");
+  const router = useRouter();
   const { toggleSidebar } = props;
   const showSidebarToggle = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("jwt_token");
+    router.push("/");
+  };
 
   return (
     <MuiToolbar component="header">
@@ -28,6 +38,15 @@ export function Toolbar(props: { toggleSidebar: () => void }) {
           </IconButton>
         )}
         <Box sx={{ flexGrow: 1 }} />
+        <Button
+          onClick={handleLogout}
+          sx={{
+            color: "content.default",
+            typography: "buttonSmall",
+          }}
+        >
+          {t("logout")}
+        </Button>
       </Stack>
     </MuiToolbar>
   );

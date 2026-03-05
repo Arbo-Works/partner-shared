@@ -4,22 +4,25 @@ import { useEffect, useRef, useState } from "react";
 import { useChat } from "@livekit/components-react/hooks";
 import { Box, IconButton, Stack, TextField } from "@mui/material";
 
+import { useLivekitState } from "@/components/Chat/hooks/useLivekitState";
 import { MicrophoneToggle } from "@/components/Chat/MicrophoneToggle";
 import { SessionInfoTooltip } from "@/components/Chat/SessionInfoTooltip";
 import { SpeakerToggle } from "@/components/Chat/SpeakerToggle";
 import RiveSendIcon, { RiveSendIconRef } from "@/components/RiveSendIcon";
+import Typography from "@/components/Typography";
 import { usePalette } from "@/hooks/usePalette";
+import theme from "@/theme";
 
 type ChatInputProps = {
-  disabled?: boolean;
   placeholder?: string;
 };
 
 export default function ChatInput({
-  disabled = false,
   placeholder = "Type a question or request",
 }: ChatInputProps) {
   const { send } = useChat();
+  const { isLoading, isDisconnected } = useLivekitState();
+  const disabled = isDisconnected;
 
   const palette = usePalette();
   const [message, setMessage] = useState("");
@@ -68,69 +71,76 @@ export default function ChatInput({
       component="form"
       onSubmit={handleSubmit}
       sx={{
-        backgroundColor: "surface.default",
-        borderRadius: "1.5rem",
-        padding: "0.3rem 1rem",
+        ...theme.vars.palette.background.noise.phantomSurfaceAlt,
+        borderRadius: "2rem",
+        padding: "0.75rem 1rem",
+        borderStyle: "solid",
+        borderWidth: "1.5px",
+        borderColor: "phantom.edge",
+        backgroundColor: "treatment.chatBubble",
       }}
     >
-      <Stack direction="column" gap="0.25rem">
-        <TextField
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder={placeholder}
-          disabled={disabled}
-          inputRef={inputRef}
-          multiline
-          maxRows={3}
-          variant="standard"
-          fullWidth
-          sx={{
-            "& .MuiInputBase-input": {
-              paddingLeft: "0.5rem",
-              paddingTop: "0.75rem",
-              color: isInputEmpty ? "content.default" : "content.emphasis",
-              typography: "body1",
-            },
-          }}
-          slotProps={{
-            input: {
-              disableUnderline: true,
-            },
-          }}
-        />
-        <Stack
-          direction="row"
-          gap="0.25rem"
-          alignItems="center"
-          justifyContent="space-between"
-          paddingBottom="0.25rem"
-          maxWidth="100%"
-          overflow="auto"
-        >
-          <SessionInfoTooltip />
+      <Stack direction="row" gap="0.25rem" alignItems="center">
+        <SessionInfoTooltip />
 
-          <Stack direction="row" spacing="-0.125rem" alignItems="center">
-            <MicrophoneToggle />
-            <SpeakerToggle />
-            <IconButton
-              size="medium"
-              variant="contained"
-              disabled={disabled}
-              onClick={handleSubmit}
-            >
-              <RiveSendIcon
-                ref={riveSendIconRef}
-                color={
-                  isInputEmpty ? palette.content.hint : palette.content.emphasis
-                }
-                sx={{
-                  width: "1.25rem",
-                  height: "1.25rem",
-                }}
-              />
-            </IconButton>
-          </Stack>
+        {isLoading ? (
+          <Typography
+            sx={{
+              width: "100%",
+              fontStyle: "italic",
+              color: "content.hint",
+            }}
+          >
+            Connecting
+          </Typography>
+        ) : (
+          <TextField
+            autoFocus
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder={placeholder}
+            disabled={disabled}
+            inputRef={inputRef}
+            multiline
+            maxRows={3}
+            variant="standard"
+            fullWidth
+            sx={{
+              "& .MuiInputBase-input": {
+                color: isInputEmpty ? "content.default" : "content.emphasis",
+                typography: "body1",
+              },
+            }}
+            slotProps={{
+              input: {
+                disableUnderline: true,
+              },
+            }}
+          />
+        )}
+
+        <Stack direction="row" spacing="0.25rem" alignItems="center">
+          <MicrophoneToggle />
+          <SpeakerToggle />
+          <IconButton
+            size="medium"
+            variant={isInputEmpty ? "text" : "contained"}
+            color="primary"
+            disabled={disabled}
+            onClick={handleSubmit}
+          >
+            <RiveSendIcon
+              ref={riveSendIconRef}
+              color={
+                isInputEmpty ? palette.content.hint : palette.content.emphasis
+              }
+              sx={{
+                width: "1.25rem",
+                height: "1.25rem",
+              }}
+            />
+          </IconButton>
         </Stack>
       </Stack>
     </Box>

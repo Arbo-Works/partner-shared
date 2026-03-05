@@ -156,6 +156,11 @@ type SurfaceColors = {
 
 type SThemeColors = Record<STheme, string> & Record<`${STheme}Alt`, string>;
 
+type TreatmentColors = {
+  chatBubble: string;
+  chatBubbleAlt: string;
+};
+
 export type SemanticPalette = {
   accent: AccentColors;
   agnosticDark: AgnosticDarkColors;
@@ -166,6 +171,7 @@ export type SemanticPalette = {
   status: StatusColors;
   surface: SurfaceColors;
   stheme: SThemeColors;
+  treatment: TreatmentColors;
 };
 
 const lightSemantic: SemanticPalette = {
@@ -260,6 +266,10 @@ const lightSemantic: SemanticPalette = {
     brown: "#805140",
     brownAlt: "#AD705A",
   },
+  treatment: {
+    chatBubble: "#715CFF14",
+    chatBubbleAlt: "#0AB4F41A",
+  },
 };
 
 const darkSemantic: SemanticPalette = {
@@ -342,6 +352,10 @@ const darkSemantic: SemanticPalette = {
     orangeAlt: "#FFB56B",
     brown: "#855645",
     brownAlt: "#CC8A72",
+  },
+  treatment: {
+    chatBubble: "#A396FA1A",
+    chatBubbleAlt: "#77D2F414",
   },
 };
 

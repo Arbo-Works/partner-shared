@@ -14,7 +14,10 @@ export const SpeakerToggle = () => {
         placement="top"
         arrow
       >
-        <IconButton onClick={() => setIsPlaybackMuted(!isPlaybackMuted)}>
+        <IconButton
+          sx={{ color: "phantom.default" }}
+          onClick={() => setIsPlaybackMuted(!isPlaybackMuted)}
+        >
           {isPlaybackMuted ? <IconHeadphonesOff /> : <IconHeadphones />}
         </IconButton>
       </Tooltip>

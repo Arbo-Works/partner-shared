@@ -33,6 +33,9 @@
       },
       "History": {
         "title": "History"
+      },
+      "Toolbar": {
+        "logout": "Logout"
       }
     }
   },
@@ -55,7 +58,7 @@
         }
       },
       "HomeContent": {
-        "inputPlaceholder": "Ask and research. @ any portfolio or tool",
+        "inputPlaceholder": "Ask, request, or research",
         "knowledgeBase": "Knowledge Base",
         "portfoliosYouFollow": "Portfolios You Follow",
         "portfoliosYouFollowZeroState": "You don't follow any portfolios yet. Follow a portfolio to see it here.",

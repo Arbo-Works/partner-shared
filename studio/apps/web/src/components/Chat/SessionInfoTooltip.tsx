@@ -1,50 +1,16 @@
 "use client";
 
 import React from "react";
-import {
-  useAgent,
-  UseAgentReturn,
-  useSessionContext,
-  UseSessionReturn,
-} from "@livekit/components-react";
-import { CircularProgress, Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+import { useAgent, useSessionContext } from "@livekit/components-react";
+import { CircularProgress, IconButton, Typography } from "@mui/material";
 import Tooltip from "@mui/material/Tooltip";
 import { Stack } from "@mui/system";
 import {
   IconAlertSquareRoundedFilled,
   IconCircleCheckFilled,
 } from "@tabler/icons-react";
-import { ConnectionState } from "livekit-client";
 
-const getIcon = (session: UseSessionReturn, agent: UseAgentReturn) => {
-  const isSessionOrAgentDisconnected =
-    session.connectionState === ConnectionState.Disconnected ||
-    !agent.isConnected;
-
-  const isLoading =
-    session.connectionState === ConnectionState.Connecting ||
-    agent.isPending ||
-    agent.state === "pre-connect-buffering";
-
-  if (isLoading) {
-    return <CircularProgress size="1rem" />;
-  }
-
-  if (isSessionOrAgentDisconnected) {
-    return (
-      <IconAlertSquareRoundedFilled
-        style={{ color: "var(--mui-palette-status-invalid)" }}
-      />
-    );
-  }
-
-  return (
-    <IconCircleCheckFilled
-      style={{ color: "var(--mui-palette-content-hint)" }}
-    />
-  );
-};
+import { useLivekitState } from "@/components/Chat/hooks/useLivekitState";
 
 export const SessionInfoTooltip = () => {
   const session = useSessionContext();
@@ -85,8 +51,34 @@ export const SessionInfoTooltip = () => {
       placement="top"
       arrow
     >
-      <Box sx={{ paddingX: "0.25rem" }}>{getIcon(session, agent)}</Box>
+      <IconButton disableRipple>
+        <Icon />
+      </IconButton>
     </Tooltip>
+  );
+};
+
+const Icon = () => {
+  const { isLoading, isDisconnected } = useLivekitState();
+
+  if (isLoading) {
+    return <CircularProgress size="1.25rem" />;
+  }
+
+  if (isDisconnected) {
+    return (
+      <IconAlertSquareRoundedFilled
+        size="1.25rem"
+        style={{ color: "var(--mui-palette-status-invalid)" }}
+      />
+    );
+  }
+
+  return (
+    <IconCircleCheckFilled
+      size="1.25rem"
+      style={{ color: "var(--mui-palette-content-hint)" }}
+    />
   );
 };
 

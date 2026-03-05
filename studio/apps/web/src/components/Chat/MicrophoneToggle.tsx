@@ -38,7 +38,11 @@ export const MicrophoneToggle = () => {
       placement="top"
       arrow
     >
-      <IconButton onClick={onClick} disabled={pending}>
+      <IconButton
+        sx={{ color: "phantom.default" }}
+        onClick={onClick}
+        disabled={pending}
+      >
         {enabled ? <IconMicrophone /> : <IconMicrophoneOff />}
       </IconButton>
     </Tooltip>
