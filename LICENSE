@@ -1,21 +1,32 @@
-MIT License
+ARTA TECH PROPRIETARY PARTNER LICENSE
 
-Copyright (c) 2026 Arta
+1. GRANTED RIGHTS
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Arta Tech Pte. Ltd. ("Arta") hereby grants to the authorized partner receiving access to this repository ("Partner") a non-exclusive, non-transferable, royalty-free, and revocable license to use, copy, and modify the software code in this repository (the "Sample Code").
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. PERMITTED USE
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Partner may use the Sample Code solely for the purpose of developing, testing, and implementing an integration between Partner’s internal systems and Arta’s software products or APIs as contemplated by the parties.
+
+3. RESTRICTIONS
+
+Partner shall not:
+• (a) distribute, sublicense, or otherwise make the Sample Code available to any third party;
+• (b) use the Sample Code to develop a product or service that competes with Arta’s products or services;
+• (c) remove, obscure, or alter any proprietary notices or labels on the Sample Code; or
+• (d) disclose the Sample Code to any person other than its employees or contractors who have a "need to know" and are bound by confidentiality obligations at least as restrictive as those in the fully executed non-disclosure agreement between the Parties.
+
+4. OWNERSHIP
+
+Arta retains all right, title, and interest in and to the Sample Code. Any modifications or derivative works of the Sample Code created by or for Partner will be the exclusive property of Arta. Partner hereby assigns all such rights to Arta upon their creation.
+
+5. CONFIDENTIALITY The Sample Code is the Confidential Information of Arta. Partner must maintain the confidentiality of the Sample Code in accordance with the confidentiality provisions of the fully executed non-disclosure agreement between the Parties.
+
+6. NO WARRANTY THE SAMPLE CODE IS PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND. ARTA DISCLAIMS ALL WARRANTIES, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT .
+
+7. TERMINATION
+
+This license terminates automatically upon:
+• (a) the expiration or termination of the relaitonship of the parties; or
+• (b) Partner’s breach of any provision of this license.
+Upon termination, Partner must immediately cease all use of the Sample Code and destroy all copies in its possession.
