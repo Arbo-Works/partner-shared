@@ -7,6 +7,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "next": "16.1.0"
+    "next": "16.1.7"
   }
 }
